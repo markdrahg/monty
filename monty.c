@@ -14,7 +14,7 @@
  */
 void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 {
-    instruction_t instructions[] = {
+	instruction_t instructions[] = {
 	{"push", push},
 	{"pall", pall},
 	{"pint", pint},
@@ -25,6 +25,7 @@ void execute_opcode(stack_t **stack, char *opcode, unsigned int line_number)
 	{NULL, NULL}};
 
 	int i = 0;
+
 	while (instructions[i].opcode)
 	{
 		if (strcmp(opcode, instructions[i].opcode) == 0)
@@ -55,6 +56,7 @@ void parse_file(FILE *file, stack_t **stack)
 	while (1)
 	{
 		char getline_result[1024];
+
 		if (fgets(getline_result, sizeof(getline_result), file) == NULL)
 		break;
 
