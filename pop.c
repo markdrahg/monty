@@ -16,16 +16,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 
 	temp = *stack;
+	*stack = (*stack)->next;
 
-	if (temp->next != NULL)
-	{
-		*stack = temp->next;
-		(*stack)->prev = NULL;
-	}
-	else
-	{
-		*stack = NULL;
-	}
+	if (*stack != NULL)
+	(*stack)->prev = NULL;
 
 	free(temp);
 }
