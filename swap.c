@@ -16,16 +16,14 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 
 	temp = (*stack)->next;
-
 	(*stack)->next = temp->next;
-	if (temp->next != NULL)
-	{
-		temp->next->prev = *stack;
-	}
+	temp->prev = (*stack)->prev;
 
-	temp->prev = NULL;
-	temp->next = *stack;
+	if ((*stack)->next != NULL)
+	(*stack)->next->prev = *stack;
+
 	(*stack)->prev = temp;
+	temp->next = *stack;
 
 	*stack = temp;
 }
