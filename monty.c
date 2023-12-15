@@ -1,10 +1,5 @@
 #include "monty.h"
 
-#ifndef _SSIZE_T_DEFINED
-#define _SSIZE_T_DEFINED
-
-#endif
-
 /**
  * execute_opcode - Responsible for executing the codes
  *
